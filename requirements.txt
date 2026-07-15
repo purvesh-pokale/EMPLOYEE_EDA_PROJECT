@@ -1,0 +1,20 @@
+# Data Manupulation
+
+pandas == 2.2.3
+numpy == 2.2.6
+
+
+#Data Visualisation
+matplotlib == 3.10.3
+seaborn == 0.13.2
+
+##Statistical Analysis
+
+scipy == 1.15.3
+
+#jupyter notbook
+jupyter == 1.1.1
+ipykernel == 6.29.5
+
+#excel
+openpyxl == 3.1.5
