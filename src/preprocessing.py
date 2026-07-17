@@ -10,7 +10,7 @@ def dataset_info(df):
 
 
     print("\n--------dataset info-------")
-    print(df.info())
+    df.info()
 
     print("\n--------Shape of dataset-------")
     print(df.shape)
@@ -19,7 +19,7 @@ def dataset_info(df):
     print(df.columns)
 
     print("\n--------Data Types-------")
-    print(df.dtype)
+    print(df.dtypes)
 
 
     print("\n--------Stastical summery -------")

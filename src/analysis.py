@@ -12,27 +12,27 @@ def lowest_salary(df):
 
 def department_salary(df):
     print("\n Average salary by department")
-    print(df.groupby("Department")["salary"].mean())
+    print(df.groupby("Department")["Salary"].mean())
 
 def city_salary(df):
     print("\n Average salary by city")
-    print(df.groupby("City")["salary"].mean())
+    print(df.groupby("City")["Salary"].mean())
 
 def gender_salary(df):
     print("\n Average salary by gender")
-    print(df.groupby("Gender")["salary"].mean())
+    print(df.groupby("Gender")["Salary"].mean())
 
 def education_salary(df):
     print("\n Average salary by education")
-    print(df.groupby("Education")["salary"].mean())
+    print(df.groupby("Education")["Salary"].mean())
 
 def performance_count(df):
     print("\n Performance count")
-    print(df["Performance"].value_count())
+    print(df["Performance"].value_countS())
 
 def work_mode_count(df):
     print("\n work mode count")
-    print(df["Work Mode"].value_count())
+    print(df["Work Mode"].value_countS())
 
 def top_5_salary(df):
     print("\nTop 5 Salary")
