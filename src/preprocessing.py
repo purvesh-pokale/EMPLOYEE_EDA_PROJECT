@@ -39,7 +39,7 @@ def remove_duplicates(df):
     df = df.drop_duplicates()
     return df
 
-def seave_clean_data(df):
+def seve_clean_data(df):
     df.to_csv("data/employee_cleaned.csv",index=False)
     print("\n clean dataset saved succesfully.")
 

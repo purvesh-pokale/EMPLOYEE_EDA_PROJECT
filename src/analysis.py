@@ -28,11 +28,11 @@ def education_salary(df):
 
 def performance_count(df):
     print("\n Performance count")
-    print(df["Performance"].value_countS())
+    print(df["Performance"].value_counts())
 
 def work_mode_count(df):
     print("\n work mode count")
-    print(df["Work Mode"].value_countS())
+    print(df["Work_Mode"].value_counts())
 
 def top_5_salary(df):
     print("\nTop 5 Salary")
