@@ -121,3 +121,14 @@ def city_salary(df):
     plt.xticks(rotation = 45)
     plt.savefig("image/city_salary.png")
     plt.show()
+
+def departmenat_pie(df):
+    plt.figure(figsize=(7,7))
+    df["Department"].value_count().plot(
+        kind = "pie",
+        autopct = "%1.1f%%"
+    )
+    plt.title('Depatment_distribution')
+    plt.ylabel("")
+    plt.savefig("image/departmenat_pie.png")
+    plt.show() 

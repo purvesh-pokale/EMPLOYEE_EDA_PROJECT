@@ -18,3 +18,6 @@ ipykernel == 6.29.5
 
 #excel
 openpyxl == 3.1.5
+
+#creating the report
+reportlab
