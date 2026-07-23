@@ -108,8 +108,78 @@ def generate_report(df):
         )
     )
 
+    elements.append(
+        Paragraph(
+            f"Most Common Workmode : "
+            f"{df["Work_Mode"].mode()[0]}",
+            styles["BodyText"]
+        )
+    )
+    elements.append(
+        Paragraph(
+            f"Higest Performance Rating : "
+            f"{df["Performance"].max()}",
+            styles["BodyText"]
+        )
+    )
+    elements.append(
+        Paragraph(
+            f"Most common Eduction :"
+            f"{df["Eduction"].mode()[0]}",
+            styles["BodyText"]
+        )
+    )
+    elements.append(Spacer(1,20))
+
+#Recomandations
+    elements.append(
+        Paragraph(
+            "<b> Recomdations <b>",
+            styles["Heading2"]
+        )
+    )
+    elements.append(
+        Paragraph(
+        "1.Review Salary Structure CROSS department.",
+        styles["BodyText"]
+        )
+    )
+
+    elements.append(
+        Paragraph(
+            "2. Encourage Employee Skill development.",
+            styles["BodyText"]
+        )
+    )
+
+    elements.append(
+        Paragraph(
+            "3.Improve performance evaluation process.",
+            styles["BodyText"]
+        )
+    )
+
+    elements.append(
+        Paragraph(
+            "4.Monitor salary outliers regularly.",
+            styles["BodyText"]
+        )
+    )
+
+    elements.append(
+        Paragraph(
+            "5. Continue data-driven HR decision making.",
+            styles["BodyText"]
+        )
+    )
+    
+
+    #Build pdf
     pdf.build(elements)
+    print("="*50)
+    print("Final  PDF Report Generated Successfully!")
+    print("="*50)
 
 
-print("PDF Report Generated Successfully!")
+
 
