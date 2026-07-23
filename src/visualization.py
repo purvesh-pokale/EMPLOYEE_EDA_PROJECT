@@ -81,7 +81,7 @@ def age_boxplot(df):
     plt.figure(figsize=(8,5))
     sns.boxplot(y=df["Age"])
     plt.title("Age Boxplot")
-    plt.savefig("images/ age_boxplot.png")
+    plt.savefig("images/age_boxplot.png")
     plt.show()
 
 def experiance_vs_salary(df):
@@ -93,7 +93,7 @@ def experiance_vs_salary(df):
         data = df
     )
     plt.title("Experiance vs Salary")
-    plt.savefig("image/ experiance_vs_salary.png")
+    plt.savefig("images/experiance_vs_salary.png")
     plt.show()
 
 def department_salary(df):
@@ -106,7 +106,7 @@ def department_salary(df):
     )
     plt.title("Department vs Salary")
     plt.xticks(rotation = 45)
-    plt.savefig("image/department_salary.png")
+    plt.savefig("images/department_salary.png")
     plt.show()
 
 
@@ -119,7 +119,7 @@ def city_salary(df):
     )
     plt.title("City vs Salary")
     plt.xticks(rotation = 45)
-    plt.savefig("image/city_salary.png")
+    plt.savefig("images/city_salary.png")
     plt.show()
 
 def departmenat_pie(df):
@@ -130,5 +130,5 @@ def departmenat_pie(df):
     )
     plt.title('Depatment_distribution')
     plt.ylabel("")
-    plt.savefig("image/departmenat_pie.png")
+    plt.savefig("images/departmenat_pie.png")
     plt.show() 

@@ -22,12 +22,12 @@ def dataset_info(df):
     print(df.dtypes)
 
 
-    print("\n--------Stastical summery -------")
+    print("\n--------Statistical summery -------")
     print(df.describe())
 
 
 def check_missing_values(df):
-    print("\n--------check missinf values-------")
+    print("\n--------check missing values-------")
     print(df.isnull().sum())
 
 
@@ -39,9 +39,9 @@ def remove_duplicates(df):
     df = df.drop_duplicates()
     return df
 
-def seve_clean_data(df):
+def save_clean_data(df):
     df.to_csv("data/employee_cleaned.csv",index=False)
-    print("\n clean dataset saved succesfully.")
+    print("\n clean dataset saved successfully.")
 
 
 

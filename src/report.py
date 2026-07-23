@@ -2,13 +2,13 @@ import os
 from reportlab.lib.styles import getSampleStyleSheet
 from reportlab.platypus import(
     SimpleDocTemplate,
-    paragraph,
+    Paragraph,
     Spacer
 )
 
-def genert_report(df):
+def generate_report(df):
 
-    os.makedirs("reports",exist_ok=True)
+    os.makedirs("report",exist_ok=True)
 
     pdf = SimpleDocTemplate(
         "report/Final_Report.pdf"
@@ -18,7 +18,7 @@ def genert_report(df):
 
     #Titale
     elements.append(
-        paragraph(
+        Paragraph(
             "Employee Exploratory Data Analysis Report",
             styles["Title"]
         )
@@ -27,34 +27,34 @@ def genert_report(df):
 
     #Dataset Summery
     elements.append(
-        paragraph(
+        Paragraph(
             "<b>Dataset Summery</b>",
             styles["Heading2"]
 
         )
     )
     elements.append(
-        paragraph(
+        Paragraph(
             f"Total Employees :{len(df)}",
             styles["BodyText"]
         )
     )
     elements.append(
-        paragraph(
+        Paragraph(
             f"Total columns : {len(df.columns)}",
             styles["BodyText"]
         )
     )
 
     elements.append(
-        paragraph(
+        Paragraph(
             f"Missing Value: {df.isnull().sum()}",
             styles["BodyText"]
         )
     )
 
     elements.append(
-        paragraph(
+        Paragraph(
             f"Duplicate Rows : {df.duplicated().sum()}",
             styles["BodyText"]
         )
@@ -64,27 +64,27 @@ def genert_report(df):
 
 #Salary Analysis
     elements.append(
-        paragraph(
+        Paragraph(
             "<b>Salary Analysis </b>",
             styles["Heading2"]
         )
     )
     elements.append(
-        paragraph(
-            f"Averages Salary :RS {df["Salary"].mean():,.2f}",
-            styles=["BodyText"]
+        Paragraph(
+            f"Averages Salary :RS {df['Salary'].mean():,.2f}",
+            styles["BodyText"]
         )
     )
     
-    elements. append(
-        paragraph(
+    elements.append(
+        Paragraph(
             f"Highest Salary : ₹{df['Salary'].max():,.2f}",
             styles["BodyText"]
         )
     )
 
     elements.append(
-        paragraph(
+        Paragraph(
             f"Lowest Salary : ₹{df['Salary'].min():,.2f}",
             styles["BodyText"]
         )
@@ -94,18 +94,22 @@ def genert_report(df):
     #Business Insights
 
     elements.append(
-        paragraph(
+        Paragraph(
             "<b> Business Insights </b>",
             styles["Heading2"]
         )
     )
 
     elements.append(
-        paragraph(
+        Paragraph(
             f"Highest Paying Department :"
-            f"{df.groupby("Department")["Salary".mean().idxmax]}",
+            f"{df.groupby('Department')['Salary'].mean().idxmax()}",
             styles["BodyText"]
         )
     )
 
+    pdf.build(elements)
+
+
+print("PDF Report Generated Successfully!")
 
