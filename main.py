@@ -13,15 +13,15 @@ os.makedirs("report",exist_ok=True)
 #lode the dateset
 print("\n"+"="*60)
 print("Lodeing Dataset")
-print("=",*60)
+print("="*60)
 
 df= load_data("data/employee_data.csv")
 
 
 # Data Preprocessing
-print("\n"+"="* 60)
+print("\n"+"="*60)
 print("DATA .PREPROCESSING")
-print("=" *60)
+print("="*60)
 
 dataset_info(df)
 
@@ -34,9 +34,9 @@ df = remove_duplicates(df)
 save_clean_data(df)
 
 #Analysis
-print("\n" +"=" * 60)
+print("\n" +"="*60)
 print("BUSINESS ANALYSIS")
-print("=" * 60)
+print("="*60)
 
 average_salary(df)
 
@@ -50,13 +50,13 @@ city_salary(df)
 
 #Genert PDF Report
 
-print("\n" +"=" * 60)
+print("\n" +"="*60)
 print("Genert PDF Repor")
 print("=" * 60)
 
 generate_report(df)
 
 #Project Completed
-print("\n" +"=" * 60)
+print("\n" +"="*60)
 print("Project Completed successfully")
-print("=" * 60)
+print("="*60)
