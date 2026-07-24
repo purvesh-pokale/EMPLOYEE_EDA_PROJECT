@@ -87,12 +87,12 @@ def age_boxplot(df):
 def experiance_vs_salary(df):
     plt.figure(figsize=(8,5))
     sns.scatterplot(
-        x= "Expriance",
+        x= "Experience",
         y = "Salary",
         hue= "Department",
         data = df
     )
-    plt.title("Experiance vs Salary")
+    plt.title("Experience vs Salary")
     plt.savefig("images/experiance_vs_salary.png")
     plt.show()
 
@@ -124,7 +124,7 @@ def city_salary(df):
 
 def departmenat_pie(df):
     plt.figure(figsize=(7,7))
-    df["Department"].value_count().plot(
+    df["Department"].value_counts().plot(
         kind = "pie",
         autopct = "%1.1f%%"
     )

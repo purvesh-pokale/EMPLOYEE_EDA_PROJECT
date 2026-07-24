@@ -48,6 +48,49 @@ department_salary(df)
 
 city_salary(df)
 
+gender_salary(df)
+
+education_salary(df)
+
+performance_count(df)
+
+work_mode_count(df)
+
+top_5_salary(df)
+
+bottom_5_salary(df)
+
+
+print("\n" + "="*60)
+print("DATA VISUALIZATION")
+print("="*60)
+
+age_distribution(df)
+
+salary_distribution(df)
+
+department_count(df)
+
+gender_count(df)
+
+education_count(df)
+
+workmode_count(df)
+
+performance_count(df)
+
+salary_boxplot(df)
+
+age_boxplot(df)
+
+experiance_vs_salary(df)
+
+department_salary(df)
+
+city_salary(df)
+
+departmenat_pie(df)
+
 #Genert PDF Report
 
 print("\n" +"="*60)

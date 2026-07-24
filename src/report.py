@@ -1,3 +1,4 @@
+from datetime import datetime
 import os
 from reportlab.lib.styles import getSampleStyleSheet
 from reportlab.platypus import(
@@ -10,9 +11,12 @@ def generate_report(df):
 
     os.makedirs("report",exist_ok=True)
 
-    pdf = SimpleDocTemplate(
-        "report/Final_Report.pdf"
+    filename = datetime.now().strftime(
+        "report/Final_Report_%Y%m%d_%H%M%S.pdf"
     )
+
+    pdf = SimpleDocTemplate(filename)
+
     styles = getSampleStyleSheet()
     elements = []
 
@@ -111,21 +115,21 @@ def generate_report(df):
     elements.append(
         Paragraph(
             f"Most Common Workmode : "
-            f"{df["Work_Mode"].mode()[0]}",
+            f"{df['Work_Mode'].mode()[0]}",
             styles["BodyText"]
         )
     )
     elements.append(
         Paragraph(
             f"Higest Performance Rating : "
-            f"{df["Performance"].max()}",
+            f"{df['Performance'].max()}",
             styles["BodyText"]
         )
     )
     elements.append(
         Paragraph(
-            f"Most common Eduction :"
-            f"{df["Eduction"].mode()[0]}",
+            f"Most common Education :"
+            f"{df['Education'].mode()[0]}",
             styles["BodyText"]
         )
     )
@@ -134,7 +138,7 @@ def generate_report(df):
 #Recomandations
     elements.append(
         Paragraph(
-            "<b> Recomdations <b>",
+            "<b>Recommdations</b>",
             styles["Heading2"]
         )
     )
@@ -177,7 +181,8 @@ def generate_report(df):
     #Build pdf
     pdf.build(elements)
     print("="*50)
-    print("Final  PDF Report Generated Successfully!")
+    print(f"Final PDF Report Generated Successfully!")
+    print(f"Saved as: {filename}")
     print("="*50)
 
 
