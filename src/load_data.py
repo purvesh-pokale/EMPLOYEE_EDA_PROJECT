@@ -1,6 +1,6 @@
 import pandas as pd
 
-def load_data(file_path):
+def load_data(file_path: str) -> pd.DataFrame:
     """
     Load Employee Data
     """
@@ -9,4 +9,3 @@ def load_data(file_path):
         return df
     except FileNotFoundError:
         print("File not found.")
-

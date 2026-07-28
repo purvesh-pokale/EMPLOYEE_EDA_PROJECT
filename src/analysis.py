@@ -2,15 +2,15 @@ def average_salary(df):
     print("\n Average Salary")
     print(df["Salary"].mean())
 
-def highest_salary(df):
+def get_highest_salary(df):
     print("\n highest Salary")
     print(df["Salary"].max())
 
-def lowest_salary(df):
+def get_lowest_salary(df):
     print("\n lowest Salary")
     print(df["Salary"].min())
 
-def department_salary(df):
+def department_average_salary(df):
     print("\n Average salary by department")
     print(df.groupby("Department")["Salary"].mean())
 
@@ -34,10 +34,10 @@ def work_mode_count(df):
     print("\n work mode count")
     print(df["Work_Mode"].value_counts())
 
-def top_5_salary(df):
+def get_top_5_salaries(df):
     print("\nTop 5 Salary")
     print(df.nlargest(5,"Salary"))
 
-def bottom_5_salary(df):
+def get_bottom_5_salaries(df):
     print("\nBottom 5 lowest paid Employees")
     print(df.nsmallest(5, "Salary"))

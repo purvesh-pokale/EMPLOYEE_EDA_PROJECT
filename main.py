@@ -40,11 +40,11 @@ print("="*60)
 
 average_salary(df)
 
-highest_salary(df)
+get_highest_salary(df)
 
-lowest_salary(df)
+get_lowest_salary(df)
 
-department_salary(df)
+department_average_salary(df)
 
 city_salary(df)
 
@@ -56,40 +56,40 @@ performance_count(df)
 
 work_mode_count(df)
 
-top_5_salary(df)
+get_top_5_salaries(df)
 
-bottom_5_salary(df)
+get_bottom_5_salaries(df)
 
 
 print("\n" + "="*60)
 print("DATA VISUALIZATION")
 print("="*60)
 
-age_distribution(df)
+plot_age_distribution(df)
 
-salary_distribution(df)
+plot_salary_distribution(df)
 
-department_count(df)
+plot_department_count(df)
 
-gender_count(df)
+plot_gender_count(df)
 
-education_count(df)
+plot_education_count(df)
 
-workmode_count(df)
+plot_workmode_count(df)
 
 performance_count(df)
 
-salary_boxplot(df)
+plot_salary_boxplot(df)
 
-age_boxplot(df)
+plot_age_boxplot(df)
 
-experiance_vs_salary(df)
+plot_experiance_vs_salary(df)
 
-department_salary(df)
+plot_department_salary(df)
 
 city_salary(df)
 
-departmenat_pie(df)
+plot_departmenat_pie(df)
 
 #Genert PDF Report
 

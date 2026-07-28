@@ -1,5 +1,6 @@
-from datetime import datetime
 import os
+
+from datetime import datetime
 from reportlab.lib.styles import getSampleStyleSheet
 from reportlab.platypus import(
     SimpleDocTemplate,
