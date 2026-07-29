@@ -1,18 +1,6 @@
 import pandas as pd
 
-# Required columns for the Employee EDA Project
-REQUIRED_COLUMNS = [
-    "EmployeeID",
-    "Name",
-    "Age",
-    "Department",
-    "Salary",
-    "City",
-    "Gender",
-    "Education",
-    "PerformanceRating",
-    "WorkMode",
-]
+from src.constants import REQUIRED_COLUMNS
 
 
 def validate_dataset(df: pd.DataFrame) -> None:
@@ -79,11 +67,18 @@ def check_duplicates(df):
 
 def remove_duplicates(df):
     df = df.drop_duplicates()
-    return df
+    return df.drop_duplicates()
 
 def save_clean_data(df):
-    df.to_csv("data/employee_cleaned.csv",index=False)
-    print("\n clean dataset saved successfully.")
+    try:
+        df.to_csv("data/employee_cleaned.csv", index=False)
+        print("\nClean dataset saved successfully.")
+
+    except PermissionError:
+        print("Permission denied. Please close the CSV file and try again.")
+
+    except OSError as error:
+        print(f"Unable to save the cleaned dataset: {error}")
 
 
 

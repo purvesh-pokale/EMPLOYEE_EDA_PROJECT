@@ -7,14 +7,32 @@ import os
 
 os.makedirs("images",exist_ok = True)   #it creat image folder automatically to save graps
 
+def save_plot(file_path: str) -> None:
+    """
+    Save the current matplotlib figure.
+
+    Args:
+        file_path (str): Output image path.
+
+    Raises:
+        OSError: If the image cannot be saved.
+    """
+    try:
+        plt.savefig(file_path)
+    except OSError as error:
+        print(f"Unable to save plot '{file_path}': {error}")
+    finally:
+        plt.close()
+
 def plot_age_distribution(df):
     plt.figure(figsize = (8,5))
     sns.histplot(df["Age"],bins = 10, kde = True)
     plt.title("Age Distribution")
     plt.xlabel("Age")
     plt.ylabel("Count")
-    plt.savefig("images/age_distribution.png")
+    save_plot("images/age_distribution.png")
     plt.show()
+    
 
 
 def plot_salary_distribution(df):
@@ -23,8 +41,9 @@ def plot_salary_distribution(df):
     plt.title("Salary Distribution")
     plt.xlabel("Salary")
     plt.ylabel("Count")
-    plt.savefig("images/Salary_distribution.png")
+    save_plot("images/Salary_distribution.png")
     plt.show()
+    
 
 def plot_department_count(df):
     plt.figure(figsize=(8,5))
@@ -33,8 +52,9 @@ def plot_department_count(df):
     plt.xlabel("Department")
     plt.ylabel("Employees")
     plt.xticks(rotation = 45)
-    plt.savefig("images/department_count.png")
+    save_plot("images/department_count.png")
     plt.show()
+
 
 def plot_gender_count(df):
     plt.figure(figsize=(6,5))
@@ -42,7 +62,7 @@ def plot_gender_count(df):
     plt.title("Gender Distribution")
     plt.xlabel("Gender")
     plt.ylabel("count")
-    plt.savefig("images/gender_distribution_count.png")
+    save_plot("images/gender_distribution_count.png")
     plt.show()
 
 def plot_education_count(df):
@@ -51,7 +71,7 @@ def plot_education_count(df):
     plt.title("Education Distribution")
     plt.xlabel("Education")
     plt.ylabel("Count")
-    plt.savefig("images/education_distribution.png")
+    save_plot("images/education_distribution.png")
     plt.show()
 
 def plot_workmode_count(df):
@@ -60,7 +80,7 @@ def plot_workmode_count(df):
     plt.title("Work Mode Distrubution")
     plt.xlabel("Work Mode")
     plt.ylabel("Count")
-    plt.savefig("images/workmode_Distribution.png")
+    save_plot("images/workmode_Distribution.png")
     plt.show()
 
 
@@ -70,21 +90,22 @@ def plot_performance_count(df):
     plt.title("Performace Distribution")
     plt.xlabel("Performance Rateing")
     plt.ylabel("Count")
-    plt.savefig("images/performance_distribution.png")
+    save_plot("images/performance_distribution.png")
     plt.show()
+
 
 def plot_salary_boxplot(df):
     plt.figure(figsize=(8,5))
     sns.boxplot(y=df["Salary"])
     plt.title("Salary Boxplot")
-    plt.savefig("images/salary_boxplot.png")
+    save_plot("images/salary_boxplot.png")
     plt.show()
 
 def plot_age_boxplot(df):
     plt.figure(figsize=(8,5))
     sns.boxplot(y=df["Age"])
     plt.title("Age Boxplot")
-    plt.savefig("images/age_boxplot.png")
+    save_plot("images/age_boxplot.png")
     plt.show()
 
 def plot_experiance_vs_salary(df):
@@ -96,7 +117,7 @@ def plot_experiance_vs_salary(df):
         data = df
     )
     plt.title("Experience vs Salary")
-    plt.savefig("images/experiance_vs_salary.png")
+    save_plot("images/experiance_vs_salary.png")
     plt.show()
 
 def plot_department_salary(df):
@@ -109,7 +130,7 @@ def plot_department_salary(df):
     )
     plt.title("Department vs Salary")
     plt.xticks(rotation = 45)
-    plt.savefig("images/department_salary.png")
+    save_plot("images/department_salary.png")
     plt.show()
 
 
@@ -122,7 +143,7 @@ def plot_city_salary(df):
     )
     plt.title("City vs Salary")
     plt.xticks(rotation = 45)
-    plt.savefig("images/city_salary.png")
+    save_plot("images/city_salary.png")
     plt.show()
 
 def plot_departmenat_pie(df):
@@ -133,5 +154,5 @@ def plot_departmenat_pie(df):
     )
     plt.title('Depatment_distribution')
     plt.ylabel("")
-    plt.savefig("images/departmenat_pie.png")
-    plt.show() 
+    save_plot("images/departmenat_pie.png")
+    plt.show()

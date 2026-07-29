@@ -180,11 +180,19 @@ def generate_report(df):
     
 
     #Build pdf
-    pdf.build(elements)
-    print("="*50)
-    print(f"Final PDF Report Generated Successfully!")
-    print(f"Saved as: {filename}")
-    print("="*50)
+    try:
+        pdf.build(elements)
+
+        print("=" * 50)
+        print("Final PDF Report Generated Successfully!")
+        print(f"Saved as: {filename}")
+        print("=" * 50)
+
+    except PermissionError:
+        print("Permission denied. Please close the PDF file and try again.")
+
+    except OSError as error:
+        print(f"Unable to generate PDF report: {error}")
 
 
 
