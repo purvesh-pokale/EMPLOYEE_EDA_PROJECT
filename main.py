@@ -9,11 +9,11 @@ import os
 def main():
     try:
 
-        #create the required floder
+#create the required floder
         os.makedirs("images",exist_ok=True)
         os.makedirs("report",exist_ok=True)
 
-        #lode the dateset
+#lode the dateset
         print("\n"+"="*60)
         print("Lodeing Dataset")
         print("="*60)
@@ -22,7 +22,7 @@ def main():
 
         validate_dataset(df)
 
-        # Data Preprocessing
+# Data  Preprocessing
         print("\n"+"="*60)
         print("DATA .PREPROCESSING")
         print("="*60)
@@ -37,7 +37,7 @@ def main():
 
         save_clean_data(df)
 
-        #Analysis
+#Analysis
         print("\n" +"="*60)
         print("BUSINESS ANALYSIS")
         print("="*60)
@@ -64,6 +64,20 @@ def main():
 
         get_bottom_5_salaries(df)
 
+        correlation_matrix = get_correlation_matrix(df)
+        
+        correlation_analysis(correlation_matrix)
+        
+        
+        outlier_results = {}
+
+        for column in ["Salary", "Age", "Experience"]:
+            outlier_results[column] = detect_outliers_iqr(df, column)
+        
+
+        
+
+#DATA VISUALIZATION
 
         print("\n" + "="*60)
         print("DATA VISUALIZATION")
@@ -95,7 +109,9 @@ def main():
 
         plot_departmenat_pie(df)
 
-        #Genert PDF Report
+        plot_correlation_heatmap(correlation_matrix)
+
+#Genert PDF Report
 
         print("\n" +"="*60)
         print("Genert PDF Repor")

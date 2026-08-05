@@ -201,6 +201,7 @@ def generate_report(df):
 
 
     charts = [
+        ("Correlation Matrix","images/correlation_heatmap.png"),
         ("Age Distribution", "images/age_distribution.png"),
         ("Department Count", "images/department_count.png"),
         ("Gender Distribution", "images/gender_distribution_count.png"),

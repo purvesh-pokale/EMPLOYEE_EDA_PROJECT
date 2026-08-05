@@ -156,3 +156,17 @@ def plot_departmenat_pie(df):
     plt.ylabel("")
     save_plot("images/departmenat_pie.png")
     plt.show()
+
+def plot_correlation_heatmap(correlation_matrix):
+    plt.figure(figsize=(8, 6))
+
+    sns.heatmap(
+        correlation_matrix,
+        annot=True,
+        cmap="coolwarm",
+        linewidths=0.5
+    )
+
+    plt.title("Correlation Heatmap")
+    plt.savefig("images/correlation_heatmap.png")
+    plt.show()
